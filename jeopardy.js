@@ -10,7 +10,7 @@ async function getCategoryIds() {
 }
 
 async function getCategory(catId) {
-  let response = await axios.get(`http://jservice.io/api/category?id=${catId}`);
+  let response = await axios.get(`https://jservice.io/api/category?id=${catId}`);
   let category = response.data;
   let allClues = category.clues;
   let clues = _.sampleSize(allClues, NUM_CLUES_PER_CAT);
