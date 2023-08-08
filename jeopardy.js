@@ -4,7 +4,7 @@ const NUM_CLUES_PER_CAT = 5;
 let categories = [];
 
 async function getCategoryIds() {
-  let response = await axios.get('http://jservice.io/api/categories', {params: {count: 100}});
+  let response = await axios.get('https://jservice.io/api/categories', {params: {count: 100}});
   let categoryIds = response.data.map(category => category.id);
   return _.sampleSize(categoryIds, NUM_CATEGORIES);
 }
@@ -83,3 +83,5 @@ $(async function() {
   $("#start").on("click", setupAndStart);
   $("#jeopardy").on("click", "td", handleClick);
 });
+
+
