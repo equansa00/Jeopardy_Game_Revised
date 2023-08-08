@@ -10,6 +10,7 @@ async function getCategoryIds() {
 }
 
 async function getCategory(catId) {
+  // Change the endpoint to HTTPS
   let response = await axios.get(`https://jservice.io/api/category?id=${catId}`);
   let category = response.data;
   let allClues = category.clues;
@@ -83,5 +84,3 @@ $(async function() {
   $("#start").on("click", setupAndStart);
   $("#jeopardy").on("click", "td", handleClick);
 });
-
-
